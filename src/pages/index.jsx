@@ -99,7 +99,7 @@ export default function Home() {
             <div className="mt-8 flex space-x-4">
 
             <Link
-                      href="/contact"
+                      href="https://drive.google.com/file/d/1FGKHacWQsEEAhBU96nLGyldFSFkmO-Yy/view?usp=sharing"
                       className="inline-flex px-4 py-2 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-accent-500 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 dark:text-slate-800"
                     >
                       Resume
