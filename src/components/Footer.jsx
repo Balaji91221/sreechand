@@ -44,7 +44,7 @@ export function Footer() {
             <div className="mt-4 text-center w-full">
               <a 
                 href="mailto:sreechand.nadella@gmail.com" 
-                className="text-2xl sm:text-1xl md:text-2xl lg:text-6xl text-primaryText-800 dark:text-primaryText-200 hover:text-accent-500 transition"
+                className="text-2xl sm:text-1xl md:text-2xl lg:text-6xl text-primaryText-800 dark:text-primaryText-200 hover:text-accent-500 transition dark:hover:text-accent-400"
               >
                 sreechand.nadella@gmail.com
               </a>

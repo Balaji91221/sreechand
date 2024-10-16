@@ -32,6 +32,10 @@ const siteMetadata = {
       name: 'Projects',
       href: '/projects',
     },
+    {
+      name: 'Publications',
+      href: '/publications',
+    },
   ]
 };
 
