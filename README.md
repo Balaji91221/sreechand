@@ -19,9 +19,8 @@ I'm a web developer with experience in building responsive and user-friendly web
 I have experience with the following technologies:
 
 - **Frontend**: HTML, CSS, JavaScript, React, Next.js, Tailwind CSS
-- **Backend**: Node.js, Express, Flask
-- **Databases**: PostgreSQL, MongoDB
-- **Tools**: Git, GitHub, Docker, Redis
+- **Backend**: Node.js,
+- **Tools**: Git, GitHub
 
 ## Projects
 

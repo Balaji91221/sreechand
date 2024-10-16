@@ -25,17 +25,19 @@ const siteMetadata = {
       href: '/experience',
     },
     {
-      name: 'Contact',
-      href: '/contact',
+      name: 'Publications',
+      href: '/publications',
     },
     {
       name: 'Projects',
       href: '/projects',
     },
     {
-      name: 'Publications',
-      href: '/publications',
+      name: 'Contact',
+      href: '/contact',
     },
+   
+   
   ]
 };
 
