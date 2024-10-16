@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import Head from 'next/head'
-
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import smart  from '@/images/logos/2.jpg'
-
+import { motion } from 'framer-motion'
+import smart from '@/images/logos/2.jpg'
 
 const projectsData = [
   {
@@ -38,7 +37,6 @@ const projectsData = [
     href: 'https://github.com/yourusername/twitter-clone', // Replace with actual GitHub link
   },
 ]
-
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -54,7 +52,7 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Sree chand </title>
+        <title>Projects - Sree Chand</title>
         <meta name="description" content="Personal projects by Sree Chand Nadella" />
       </Head>
       <SimpleLayout
@@ -65,14 +63,20 @@ export default function Projects() {
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {projectsData.map((project) => {
-            return (
-              <Card as="li" key={project.title}>
+          {projectsData.map((project, index) => (
+            <motion.li
+              key={project.title}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <Card>
                 <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                   <Image
                     src={project.logo}
                     alt=""
-                    className="w-8 h-8"
+                    className="w-8 h-8 rounded-lg" // Here
                     unoptimized
                     width={32}
                     height={32}
@@ -87,8 +91,8 @@ export default function Projects() {
                   <span className="ml-2">{project.title}</span>
                 </p>
               </Card>
-            )
-          })}
+            </motion.li>
+          ))}
         </ul>
       </SimpleLayout>
     </>
