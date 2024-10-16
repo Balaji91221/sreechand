@@ -77,14 +77,32 @@ const education = [
     schoolName: 'University of Florida (UF)',
     startDate: 'Aug 2022',
     endDate: 'May 2024',
+    description: 'Specialization in Machine Learning and Data Science',
+    details:'GPA: 3.9/4.0',
   },
   {
     degree: 'Bachelor of Technology, Computer Science and Engineering (Data Analytics)',
     schoolName: 'Vellore Institute of Technology, Andhra Pradesh',
     startDate: 'Jan 2018',
     endDate: 'Jul 2022',
+    description: 'Specialization in Data Analytics',
+    details:'GPA: 3.8/4.0',
   },
 ]
+const skills = {
+  languages: [
+    'Python', 'Java', 'C', 'MATLAB', 'R', 'PHP', 'SQL', 'HTML', 'CSS', 'JavaScript', 'Erlang', 'Verilog',
+  ],
+  technologies: [
+    'PyTorch', 'TensorFlow', 'Figma', 'Rest-API', 'AWS', 'Git', 'IDEs', 'VMware', 'AutoCAD', 'Cisco Packet Tracer', 'Word', 'Excel', 'PowerPoint', 'GAN', 'VAE', 'Docker', 'PowerBI', 'Postman', 'Kubernetes',
+  ],
+  courses: [
+    'DBMS', 'OOPs', 'Blockchain', 'Cryptography', 'AI', 'Software Engineering', 'ML', 'Deep Learning', 'Analysis of Algorithms', 'Mathematics for Intelligent Systems', 'Distributed Operating Systems and Principles', 'Cyber-Physical Security Systems', 'Computer Networks', 'Advance Data Structures', 'Advanced Data Analytics', 'Reinforcement Learning', 'Computer Vision', 'NLP', 'Data Warehousing and Data Mining', 'Statistical Analysis and Modeling',
+  ],
+  coreCompetencies: [
+    'Machine Learning', 'Deep Learning', 'Computer Science', 'Statistics', 'Algorithms', 'Data Manipulation',
+  ]
+}
 
 export default function Resume() {
   const [isClient, setIsClient] = useState(false)
@@ -154,16 +172,15 @@ export default function Resume() {
             </Card>
           ))}
         </ul>
+
         <div className="relative max-w-lg mx-auto mt-24 lg:max-w-7xl">
-          <div>
-            <h2 className="mb-6 text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl">
-              Education
-            </h2>
-          </div>
+          <h2 className="mb-6 text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl">
+            Education
+          </h2>
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
             {education.map((item, index) => (
               <Card key={index}>
-                <p className="text-sm text-primaryText-600 dark:text-primaryText-400">
+                <p className="text-sm text-primaryText-600 dark:text-primaryText-400 ">
                   {item.startDate} - {item.endDate}
                 </p>
                 <div className="block mt-2">
@@ -173,11 +190,77 @@ export default function Resume() {
                   <p className="text-base font-semibold text-primaryText-800 dark:text-primaryText-100">
                     {item.schoolName}
                   </p>
+                  <Card.Description>
+                    {item.description}
+                  </Card.Description>
+                  <Card.Description>
+                    {item.details}
+                  </Card.Description>
                 </div>
               </Card>
             ))}
           </div>
-        </div>
+
+          <div className="mt-12">
+  <h2 className="mb-6 text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl">
+    Skills
+  </h2>
+  <div className="space-y-8">
+    <div>
+      <h3 className="text-xl font-semibold text-primaryText-800 dark:text-primaryText-100">Languages</h3>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {skills.languages.map((language, idx) => (
+          <button
+            key={idx}
+            className="px-3 py-1 border rounded text-primaryText-800 dark:text-primaryText-100 border-accent-400 bg-transparent hover:bg-accent-400 hover:text-primaryText-800 transition-colors"
+          >
+            {language}
+          </button>
+        ))}
+      </div>
+    </div>
+    <div>
+      <h3 className="text-xl font-semibold text-primaryText-800 dark:text-primaryText-100">Technologies and Frameworks</h3>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {skills.technologies.map((tech, idx) => (
+          <button
+            key={idx}
+            className="px-3 py-1 border rounded  text-primaryText-800   border-accent-400 bg-transparent  hover:bg-accent-400 hover:text-primaryText-800  dark:text-primaryText-100  transition-colors  "
+          >
+            {tech}
+          </button>
+        ))}
+      </div>
+    </div>
+    <div>
+      <h3 className="text-xl font-semibold text-primaryText-800 dark:text-primaryText-100">Courses</h3>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {skills.courses.map((course, idx) => (
+          <button
+            key={idx}
+            className="px-3 py-1 border rounded  text-primaryText-800 dark:text-primaryText-100 border-accent-400 bg-transparent hover:bg-accent-400 hover:text-primaryText-800 transition-colors"
+          >
+            {course}
+          </button>
+        ))}
+      </div>
+    </div>
+    <div>
+      <h3 className="text-xl font-semibold text-primaryText-800 dark:text-primaryText-100">Core Competencies</h3>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {skills.coreCompetencies.map((competency, idx) => (
+          <button
+            key={idx}
+            className="px-3 py-1 border rounded text-primaryText-800 dark:text-primaryText-100 border-accent-400 bg-transparent hover:bg-accent-400 hover:text-primaryText-800 transition-colors"
+          >
+            {competency}
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
       </SimpleLayout>
     </>
   )

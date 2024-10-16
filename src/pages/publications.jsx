@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { motion } from 'framer-motion'
-import publicationLogo from '@/images/avatar.jpg'
+import publicationLogo from '@/images/photo.jpg'
 
 const publicationsData = [
   {
