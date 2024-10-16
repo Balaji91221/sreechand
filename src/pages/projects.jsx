@@ -3,37 +3,38 @@ import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
+import smart  from '@/images/logos/2.jpg'
 
 
 const projectsData = [
   {
     title: 'Smart Parking Management System',
     description: `Developed software to computerize the traditional way of booking parking slots. The attendant manages all the requests made by customers for slot booking. Admin manages all the attendees.`,
-    logo: '/path/to/smart-parking-logo.svg', // Replace with actual logo path
+    logo: smart, // Replace with actual logo path
     href: 'https://github.com/yourusername/smart-parking', // Replace with actual GitHub link
   },
   {
     title: 'Real Time Object Detector',
     description: `Focused on detecting and identifying objects from RGB images using an object detection framework. Developed an Android-based live application to run the framework in real-time.`,
-    logo: '/path/to/object-detector-logo.svg', // Replace with actual logo path
+    logo: smart, // Replace with actual logo path
     href: 'https://github.com/yourusername/object-detector', // Replace with actual GitHub link
   },
   {
     title: 'IoT Sensors, Devices, and Hardware-Based Projects',
     description: `Led several projects including an automatic water level detector using Arduino, door automation using Raspberry Pi, and a rough terrain climber bot with a microcontroller-based circuit, achieving the highest grade.`,
-    logo: '/path/to/iot-projects-logo.svg', // Replace with actual logo path
+    logo: smart, // Replace with actual logo path
     href: 'https://github.com/yourusername/iot-projects', // Replace with actual GitHub link
   },
   {
     title: 'Road Accident Analysis in India',
     description: `Analyzed data on road accidents in India to identify trends and suggest improvements for road safety.`,
-    logo: '/path/to/road-accident-logo.svg', // Replace with actual logo path
+    logo: smart, // Replace with actual logo path
     href: 'https://github.com/yourusername/road-accident-analysis', // Replace with actual GitHub link
   },
   {
     title: 'Twitter Clone Using Erlang and WebSocket API',
     description: `Developed a clone of Twitter using Erlang and WebSocket API for real-time communication and data exchange.`,
-    logo: '/path/to/twitter-clone-logo.svg', // Replace with actual logo path
+    logo: smart, // Replace with actual logo path
     href: 'https://github.com/yourusername/twitter-clone', // Replace with actual GitHub link
   },
 ]
