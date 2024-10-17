@@ -6,86 +6,89 @@ import { RiPhoneLine, RiMailLine } from 'react-icons/ri'
 
 const siteMetadata = {
   title: 'Sree Chand',
-
   socials: {
     facebook: 'https://www.facebook.com',
     github: 'https://github.com',
     twitter: 'https://twitter.com',
   }
-}
+};
 
 const Contact = () => {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [subject, setSubject] = useState('')
-  const [message, setMessage] = useState('')
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState('');
 
   // handle first name change
   const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value)
-  }
+    setFirstName(e.target.value);
+  };
 
   // handle last name change
   const handleLastNameChange = (e) => {
-    setLastName(e.target.value)
-  }
+    setLastName(e.target.value);
+  };
 
   // handle email change
   const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-  }
+    setEmail(e.target.value);
+  };
 
   // handle phone change
   const handlePhoneChange = (e) => {
-    setPhone(e.target.value)
-  }
+    setPhone(e.target.value);
+  };
 
   // handle subject change
   const handleSubjectChange = (e) => {
-    setSubject(e.target.value)
-  }
+    setSubject(e.target.value);
+  };
 
   // handle message change
   const handleMessageChange = (e) => {
-    setMessage(e.target.value)
-  }
+    setMessage(e.target.value);
+  };
 
   const handleOnSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const templateParams = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      phone: phone,
-      subject: subject,
-      message: message,
-    }
+      firstName,
+      lastName,
+      email,
+      phone,
+      subject,
+      message,
+    };
 
     emailjs
       .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
         templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_USER_ID
+        process.env.NEXT_PUBLIC_PUBLIC_USER_ID
       )
       .then(
         (response) => {
-          console.log('SUCCESS!', response.status, response.text)
-          setFirstName('')
-          setLastName('')
-          setEmail('')
-          setPhone('')
-          setSubject('')
-          setMessage('')
+          console.log('SUCCESS!', response.status, response.text);
+          setStatus('Email sent successfully!');
+          // Clear the form
+          setFirstName('');
+          setLastName('');
+          setEmail('');
+          setPhone('');
+          setSubject('');
+          setMessage('');
         },
         (err) => {
-          console.log('FAILED...', err)
+          console.error('FAILED...', err);
+          setStatus('Failed to send email. Please try again later.');
         }
-      )
-  }
+      );
+  };
 
   return (
     <>
