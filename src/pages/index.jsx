@@ -4,6 +4,43 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
 import avatarImage from '@/images/avatar.jpg';
+import { FaTwitter, FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa'; // React Icons
+import clsx from 'clsx';
+
+const email = "example@example.com";
+
+function SocialLink({ className, href, children, icon: Icon }) {
+  return (
+    <li className={clsx(className, 'flex')}>
+      <Link
+        href={href}
+        className="flex text-sm font-medium transition group text-primaryText-800 hover:text-accent-500 dark:text-primaryText-200 dark:hover:text-accent-500"
+      >
+        <Icon className="flex-none w-6 h-6 transition fill-primaryText-500 group-hover:fill-accent-500" />
+        <span className="ml-4">{children}</span>
+      </Link>
+    </li>
+  );
+}
+
+function SocialLinks() {
+  return (
+    <ul role="list" className="flex space-x-8">
+      <SocialLink href="https://twitter.com/sreechandn" icon={FaTwitter}>
+        
+      </SocialLink>
+      <SocialLink href="https://instagram.com/sreechandn" icon={FaInstagram}>
+        
+      </SocialLink>
+      <SocialLink href="https://github.com/BalajiSreeChand" icon={FaGithub}>
+        
+      </SocialLink>
+      <SocialLink href="https://www.linkedin.com/in/sree-chand-nadella/" icon={FaLinkedin}>
+        
+      </SocialLink>
+    </ul>
+  );
+}
 
 export default function Home() {
   return (
@@ -46,6 +83,10 @@ export default function Home() {
                 Experience in developing data solutions, CI/CD pipelines, and leadership roles in student organizations.
               </p>
             </div>
+
+            
+            <SocialLinks  />
+
             <motion.div
               className="mt-8 flex space-x-4"
               initial={{ opacity: 0 }}
