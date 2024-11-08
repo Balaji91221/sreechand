@@ -102,7 +102,7 @@ const education = [
   },
   {
     degree: 'Bachelor of Technology, Computer Science',
-    schoolName: 'Indian Institute of Technology (IIT)',
+    schoolName: 'vellor Institute of Technology (VIT)',
     startDate: 'Aug 2018',
     endDate: 'May 2022',
     description: 'Specialization in Artificial Intelligence and Machine Learning',
