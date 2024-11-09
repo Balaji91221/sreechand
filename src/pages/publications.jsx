@@ -37,7 +37,6 @@ created by data clutter to assist researchers and medical professionals.`,
   },
   // Add more publications as needed
 ];
-
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -60,44 +59,42 @@ export default function Publications() {
         title="Patents and Publications"
         intro="Here are some patents and publications that showcase my research and innovation in various fields."
       >
-        <ul
-          role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {publicationsData.map((publication, index) => (
-            <motion.li
-              key={publication.title}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              whileHover={{ scale: 1 }}
-            >
-              <Card className="pb-0 pt-2 px-4 flex-col items-start">
-                <div className="overflow-visible py-2">
-                  <Image
-                    src={publication.logo}
-                    alt=""
-                    className="object-cover rounded-xl"
-                    unoptimized
-                    width={270}
-                    whileHover={{ scale: 0 }}
-                    
-                  />
-                </div>
-                <div className="w">
-                  <h2 className="text-base font-semibold text-primaryText-800 dark:text-primaryText-200  ">
-                    <Card.Link href={publication.href}>{publication.title}</Card.Link>
-                  </h2>
-                  <Card className="justify-content  text-primaryText-800 dark:text-primaryText-200">{publication.description}</Card>
-                  <p className="flex mt-4 text-sm font-medium text-zinc-400 dark:text-zinc-200">
-                    <LinkIcon className="w-6 h-6" />
-                    <span className="ml-2  text-primaryText-800 dark:text-primaryText-200  hover:text-accent-500 transition dark:hover:text-accent-400">{publication.title}</span>
-                  </p>
-                </div>
-              </Card>
-            </motion.li>
-          ))}
-        </ul>
+        <div className="relative">
+          
+          <ul role="list" className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+            {publicationsData.map((publication, index) => (
+              <motion.li
+                key={publication.title}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                whileHover={{ scale: 1 }}
+              >
+                <Card className="pb-0 pt-2 px-4 flex-col items-start">
+                  <div className="overflow-visible py-2">
+                    <Image
+                      src={publication.logo}
+                      alt="Publication Logo"
+                      className="object-cover rounded-xl"
+                      unoptimized
+                      width={270}
+                    />
+                  </div>
+                  <div className="w">
+                    <h2 className="text-base font-semibold text-primaryText-800 dark:text-primaryText-200">
+                      <Card.Link href={publication.href}>{publication.title}</Card.Link>
+                    </h2>
+                    <Card className="justify-content text-primaryText-800 dark:text-primaryText-200">{publication.description}</Card>
+                    <p className="flex mt-4 text-sm font-medium text-zinc-400 dark:text-zinc-200">
+                      <LinkIcon className="w-6 h-6" />
+                      <span className="ml-2 text-primaryText-800 dark:text-primaryText-200 hover:text-accent-500 transition dark:hover:text-accent-400">{publication.title}</span>
+                    </p>
+                  </div>
+                </Card>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
       </SimpleLayout>
     </>
   );

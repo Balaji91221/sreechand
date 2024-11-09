@@ -207,7 +207,6 @@ function AvatarContainer({ className, ...props }) {
     />
   )
 }
-
 function Avatar({ large = false, className, ...props }) {
   return (
     <Link
@@ -216,19 +215,24 @@ function Avatar({ large = false, className, ...props }) {
       className={clsx(className, 'pointer-events-auto')}
       {...props}
     >
-      <Image
-        src={avatarImage}
-        alt=""
-        sizes={large ? '4rem' : '2.25rem'}
-        className={clsx(
-          'rounded-full bg-primaryText-100 object-cover dark:bg-primaryText-800',
-          large ? 'h-16 w-16' : 'h-9 w-9'
-        )}
-        priority
-      />
+      <div className="relative w-full flex justify-center">
+        <div className="absolute top-0">
+          <Image
+            src={avatarImage}
+            alt="Profile Image"
+            sizes={large ? '4rem' : '2.25rem'}
+            className={clsx(
+              'rounded-full bg-primaryText-100 object-cover dark:bg-primaryText-800',
+              large ? 'h-16 w-16' : 'h-9 w-9'
+            )}
+            priority
+          />
+        </div>
+      </div>
     </Link>
-  )
+  );
 }
+
 
 export function Header() {
   let isHomePage = useRouter().pathname === '/'

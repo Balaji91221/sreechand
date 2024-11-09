@@ -1,114 +1,110 @@
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Head from 'next/head';
-import Link from 'next/link';
-import { Container } from '@/components/Container';
+'use client'
+
+import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
+import { FaTwitter, FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { Typewriter } from 'react-simple-typewriter'
 import avatarImage from '@/images/avatar.jpg';
-import { FaTwitter, FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa'; // React Icons
-import clsx from 'clsx';
 
-const email = "example@example.com";
-
-function SocialLink({ className, href, children, icon: Icon }) {
+export default function Component() {
   return (
-    <li className={clsx(className, 'flex')}>
-      <Link
-        href={href}
-        className="flex text-sm font-medium transition group text-primaryText-800 hover:text-accent-500 dark:text-primaryText-200 dark:hover:text-accent-500"
+    <div className="min-h-screen bg-gray-50 dark:bg-black text-gray-800 dark:text-gray-200 py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-7xl mx-auto"
       >
-        <Icon className="flex-none w-6 h-6 transition fill-primaryText-500 group-hover:fill-accent-500" />
-        <span className="ml-4">{children}</span>
-      </Link>
-    </li>
-  );
-}
-
-function SocialLinks() {
-  return (
-    <ul role="list" className="flex space-x-8">
-      <SocialLink href="https://twitter.com/sreechandn" icon={FaTwitter}>
         
-      </SocialLink>
-      <SocialLink href="https://instagram.com/sreechandn" icon={FaInstagram}>
-        
-      </SocialLink>
-      <SocialLink href="https://github.com/BalajiSreeChand" icon={FaGithub}>
-        
-      </SocialLink>
-      <SocialLink href="https://www.linkedin.com/in/sree-chand-nadella/" icon={FaLinkedin}>
-        
-      </SocialLink>
-    </ul>
-  );
-}
-
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Home - Sree Chand</title>
-        <meta name="description" content="Sree Chand Nadella's personal website" />
-      </Head>
-      <Container className="mt-16 sm:mt-32">
-        <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+          
+          {/* Image Container */}
           <motion.div
-            className="lg:pl-20"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5 mb-8 lg:mb-0 mt-8 lg:mt-0"
           >
-            <div className="max-w-xs px-2.5 lg:max-w-none">
+            <div className="relative">
               <Image
                 src={avatarImage}
-                alt="picture of the author"
-                sizes="(min-width: 1024px) 32rem, 20rem"
-                className="object-cover aspect-square rounded-2xl bg-primaryText-100 dark:bg-primaryText-800"
+                alt="Sree Chand Nadella"
+                width={400}
+                height={400}
+                className="shadow-lg border-1 border-accent-400 rounded-lg"
               />
+              <div className="absolute  bg-accent-400 opacity-10"></div>
             </div>
           </motion.div>
+
+          {/* Content Container */}
           <motion.div
-            className="lg:order-first lg:row-span-2"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="lg:col-span-7 lg:order-last"
           >
-            <h1 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl">
+            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl xl:text-6xl mb-4 text-gray-900 dark:text-gray-100">
               Sree Chand Nadella
             </h1>
-            <div className="mt-6 text-base space-y-7 text-primaryText-600 dark:text-primaryText-400">
-              <p className="whitespace-pre-wrap">
-                Sree Chand Nadella is a software engineer with a background in SaaS, e-commerce, and data engineering.
-                Holds degrees in Computer Science, with published research and a pending patent.
-                Proficient in AI, AWS, DevSecOps, Python, Java, Docker, and Kubernetes.
-                Experience in developing data solutions, CI/CD pipelines, and leadership roles in student organizations.
-              </p>
-            </div>
-
-            
-            <SocialLinks  />
-
-            <motion.div
-              className="mt-8 flex space-x-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-            >
+            <h2 className="text-2xl font-bold mb-6 text-gray-700 dark:text-gray-300">
+              I am a{' '}
+              <span className="text-accent-400">
+                <Typewriter
+                  words={['Student', 'Software Developer']}
+                  loop={0}
+                  cursor
+                  cursorStyle='|'
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
+            </h2>
+            <p className="mt-3 text-xl sm:text-2xl lg:text-xl xl:text-2xl mb-8 leading-relaxed text-gray-600 dark:text-gray-400">
+              Software engineer with expertise in SaaS, e-commerce, and data engineering. Proficient in AI, AWS, DevSecOps, Python, Java, Docker, and Kubernetes.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
               <Link
                 href="https://drive.google.com/file/d/1FGKHacWQsEEAhBU96nLGyldFSFkmO-Yy/view?usp=sharing"
-                className="inline-flex px-4 py-2 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-accent-500 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 dark:text-slate-800"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-accent-400 hover:bg-accent-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400 transition-colors duration-300"
               >
-                Resume
+                View Resume
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex px-4 py-2 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-accent-500 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 dark:text-slate-800"
+                className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400 transition-colors duration-300"
               >
-                Contact
+                Contact Me
               </Link>
-            </motion.div>
+            </div>
+            <div className="mt-12">
+              <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Connect with me</h2>
+              <div className="flex space-x-6">
+                <SocialLink href="https://twitter.com/sreechandn" icon={FaTwitter} label="Twitter" />
+                <SocialLink href="https://instagram.com/sreechandn" icon={FaInstagram} label="Instagram" />
+                <SocialLink href="https://github.com/BalajiSreeChand" icon={FaGithub} label="GitHub" />
+                <SocialLink href="https://www.linkedin.com/in/sree-chand-nadella/" icon={FaLinkedin} label="LinkedIn" />
+              </div>
+            </div>
           </motion.div>
+          
         </div>
-      </Container>
-    </>
-  );
+      </motion.div>
+    </div>
+  )
+}
+
+function SocialLink({ href, icon: Icon, label }) {
+  return (
+    <Link 
+      href={href} 
+      className="text-gray-600 dark:text-gray-400 hover:text-accent-400 transition-colors duration-300"
+    >
+      <span className="sr-only">{label}</span>
+      <Icon className="w-8 h-8" />
+    </Link>
+  )
 }
