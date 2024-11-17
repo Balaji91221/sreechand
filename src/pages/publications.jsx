@@ -4,39 +4,41 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { motion } from 'framer-motion'
 import publicationLogo from '@/images/photo.jpg'
+import covid from '@/images/projects/coronavirus-5174671_1280.jpg'
+import video from '@/images/projects/vizvideo.png'
 
 const publicationsData = [
   {
-    title: 'Patent 1',
-    description: ` Virtual Reality Kinetic Mapping: AI-Powered Realistic Physical Interaction in VR”-an AI-driven VR
-algorithm that seamlessly translates real-world physical movements into immersive virtual interactions`,
+    title: 'Virtual Reality Kinetic Mapping',
+    type: 'Patent',
+    description: `AI-Powered Realistic Physical Interaction in VR - an AI-driven VR algorithm that seamlessly translates real-world physical movements into immersive virtual interactions`,
     logo: publicationLogo,
     href: 'https://linktopatent.com/patent1',
+    category: 'VR & AI',
   },
   {
-    title: 'Publication on AI',
-    description: `Visualization and Prediction of Covid-19 data using Random Forest Regression”-employs AI to resolve challenges
-created by data clutter to assist researchers and medical professionals.`,
-    logo: publicationLogo,
+    title: 'Covid-19 Data Visualization',
+    type: 'Publication',
+    description: `Visualization and Prediction of Covid-19 data using Random Forest Regression - employs AI to resolve challenges created by data clutter to assist researchers and medical professionals.`,
+    logo: covid,
     href: 'https://linktopublication.com/ai-publication',
+    category: 'Healthcare & AI',
   },
   {
-    title: 'Publication on AI',
-    description: `A Real-Time Video Stabilization Framework for Consumer Camera”- a cutting-edge framework designed
-to provide real-time video stabilization solutions for consumer-grade cameras, ensuring smooth and jitter-free
-footage`,
-    logo: publicationLogo,
+    title: 'Real-Time Video Stabilization',
+    type: 'Publication',
+    description: `A Real-Time Video Stabilization Framework for Consumer Camera - a cutting-edge framework designed to provide real-time video stabilization solutions for consumer-grade cameras, ensuring smooth and jitter-free footage`,
+    logo: video,
     href: 'https://linktopublication.com/ai-publication',
+    category: 'Computer Vision',
   },
-  {
-    title: 'Publication on AI',
-    description: `Visualization and Prediction of Covid-19 data using Random Forest Regression”-employs AI to resolve challenges
-created by data clutter to assist researchers and medical professionals.`,
-    logo: publicationLogo,
-    href: 'https://linktopublication.com/ai-publication',
-  },
-  // Add more publications as needed
-];
+]
+
+function TypeIcon({ type }) {
+  if (type === 'Patent') return '🔏'
+  if (type === 'Publication') return '📖'
+  return '🔬'
+}
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>

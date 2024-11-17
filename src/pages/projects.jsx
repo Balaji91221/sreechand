@@ -4,36 +4,42 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { motion } from 'framer-motion'
 import smart from '@/images/logos/2.jpg'
+import smartpark from '@/images/projects/Smartpark.png'
+import iot from '@/images/projects/IoT Sensors, Devices, and Hardware-Based.png';
+import road from '@/images/projects/road.jpg';
+import twitter from '@/images/projects/twitter.png';
+import real from '@/images/projects/Real-Time.png';
+
 
 const projectsData = [
   {
     title: 'Smart Parking Management System',
     description: `Developed software to computerize the traditional way of booking parking slots. The attendant manages all the requests made by customers for slot booking. Admin manages all the attendees.`,
-    logo: smart, // Replace with actual logo path
+    logo: smartpark, // Replace with actual logo path
     href: 'https://github.com/yourusername/smart-parking', // Replace with actual GitHub link
   },
   {
     title: 'Real Time Object Detector',
     description: `Focused on detecting and identifying objects from RGB images using an object detection framework. Developed an Android-based live application to run the framework in real-time.`,
-    logo: smart, // Replace with actual logo path
+    logo: real, // Replace with actual logo path
     href: 'https://github.com/yourusername/object-detector', // Replace with actual GitHub link
   },
   {
     title: 'IoT Sensors, Devices, and Hardware-Based Projects',
     description: `Led several projects including an automatic water level detector using Arduino, door automation using Raspberry Pi, and a rough terrain climber bot with a microcontroller-based circuit, achieving the highest grade.`,
-    logo: smart, // Replace with actual logo path
+    logo: iot, // Replace with actual logo path
     href: 'https://github.com/yourusername/iot-projects', // Replace with actual GitHub link
   },
   {
     title: 'Road Accident Analysis in India',
     description: `Analyzed data on road accidents in India to identify trends and suggest improvements for road safety.`,
-    logo: smart, // Replace with actual logo path
+    logo: road, // Replace with actual logo path
     href: 'https://github.com/yourusername/road-accident-analysis', // Replace with actual GitHub link
   },
   {
     title: 'Twitter Clone Using Erlang and WebSocket API',
     description: `Developed a clone of Twitter using Erlang and WebSocket API for real-time communication and data exchange.`,
-    logo: smart, // Replace with actual logo path
+    logo: twitter, // Replace with actual logo path
     href: 'https://github.com/yourusername/twitter-clone', // Replace with actual GitHub link
   },
 ]
@@ -72,11 +78,11 @@ export default function Projects() {
               whileHover={{ scale: 1.05 }}
             >
               <Card>
-                <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <div className="relative z-10 flex  bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                   <Image
                     src={project.logo}
                     alt=""
-                    className="w-8 h-8 rounded-lg" // Here
+                    className="w-80 h-60 rounded-lg" // Here
                     unoptimized
                     width={32}
                     height={32}
