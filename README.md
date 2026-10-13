@@ -1,55 +1,69 @@
-# Sree Chand Nadella's Portfolio
+# Sree Chand Nadella · Portfolio
 
-Welcome to my portfolio! I'm Sree Chand Nadella, a passionate web developer focused on creating stunning websites and digital experiences. This portfolio showcases my skills, projects, and contact information.
+**A personal website for presenting engineering work, experience, and publications.**
 
-## Table of Contents
+Next.js · React · Tailwind CSS · Framer Motion · EmailJS
 
-- [About Me](#about-me)
-- [Technologies](#technologies)
-- [Projects](#projects)
-- [Contact](#contact)
-- [License](#license)
+## About this project
 
-## About Me
+This repository contains the portfolio website for **Sree Chand Nadella**. It brings a professional introduction, selected projects, experience, publications, and a contact form into a consistent interface.
 
-I'm a web developer with experience in building responsive and user-friendly web applications. I enjoy working with modern technologies and am always eager to learn and improve my skills.
+The site content belongs to the named portfolio subject. The repository is maintained under [Balaji91221](https://github.com/Balaji91221).
 
-## Technologies
+## Pages and features
 
-I have experience with the following technologies:
+- Animated introduction and profile presentation.
+- Project cards with images and descriptions.
+- Dedicated experience and publications pages.
+- Contact form that sends through EmailJS.
+- Shared navigation, layout, footer, and theme styling.
 
-- **Frontend**: HTML, CSS, JavaScript, React, Next.js, Tailwind CSS
-- **Backend**: Node.js,
-- **Tools**: Git, GitHub
+## Run locally
 
-## Projects
+Open the source directory with Node.js/npm installed:
 
-Here are some of the projects I've worked on:
+```bash
+npm install
+npm run dev
+```
 
-1. **[Project Name 1](#)**  
-   A brief description of the project. Explain the purpose, technologies used, and any notable features.
+Open [localhost:3000](http://localhost:3000). The package also defines `npm run build`, `npm start`, and `npm run lint`.
 
-2. **[Project Name 2](#)**  
-   A brief description of the project. Explain the purpose, technologies used, and any notable features.
+## Contact form setup
 
-3. **[Project Name 3](#)**  
-   A brief description of the project. Explain the purpose, technologies used, and any notable features.
+Configure these public EmailJS identifiers in `.env.local` for your own EmailJS service:
 
-Feel free to explore my projects to see my work in action!
+- `NEXT_PUBLIC_SERVICE_ID`
+- `NEXT_PUBLIC_TEMPLATE_ID`
+- `NEXT_PUBLIC_PUBLIC_USER_ID`
 
-## Contact
+The form implementation is in [`src/pages/contact.jsx`](src/pages/contact.jsx). Its template parameters include name, email, phone, subject, and message. Configure the matching template in EmailJS before relying on message delivery.
 
-If you would like to get in touch, please feel free to reach out via email at [sreechand.nadella@gmail.com](mailto:sreechand.nadella@gmail.com).
+## Architecture
 
-You can also connect with me on my social media platforms:
+```mermaid
+flowchart LR
+    P[Next.js page routes] --> C[Shared React components]
+    C --> S[Tailwind and motion styling]
+    P --> D[Portfolio content and images]
+    F[Contact form] --> E[EmailJS service]
+```
 
-- [LinkedIn](https://www.linkedin.com/in/yourprofile)
-- [GitHub](https://github.com/Balaji91221)
+## Edit the portfolio
 
-## License
+| Location | Content |
+|---|---|
+| [`src/pages/index.jsx`](src/pages/index.jsx) | Introduction and profile links |
+| [`src/pages/projects.jsx`](src/pages/projects.jsx) | Project cards |
+| [`src/pages/experience.jsx`](src/pages/experience.jsx) | Work experience |
+| [`src/pages/publications.jsx`](src/pages/publications.jsx) | Publications |
+| [`src/components/`](src/components/) | Reusable layout and interface pieces |
+| [`src/images/`](src/images/) | Portrait and project assets |
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Some project links in the source remain placeholders. Replace them with the appropriate destinations when adapting the site.
 
----
+## Contact and license note
 
-Thank you for visiting my portfolio! I look forward to connecting with you.
+Portfolio contact: [sreechand.nadella@gmail.com](mailto:sreechand.nadella@gmail.com).
+
+The earlier project documentation states MIT, but the repository currently has no standalone `LICENSE` file.
